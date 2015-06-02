@@ -1,0 +1,8 @@
+
+## require to nokogiri
+# brew tap homebrew/dupes
+# brew install libxml2 libxslt libiconv
+# brew link --force libxml2 libxslt libiconv
+
+gem "nokogiri" # --use-system-libraries 
+gem "mysql2"

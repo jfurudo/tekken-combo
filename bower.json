@@ -1,0 +1,16 @@
+{
+  "name": "TekkenCombo",
+  "version": "0.0.0",
+  "authors": [
+    "jfurudo <jfurudo1@gmail.com>"
+  ],
+  "description": "The service of easy to post combo for tekken.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
