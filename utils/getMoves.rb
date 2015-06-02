@@ -18,7 +18,6 @@ data = []
 doc.css('#content_block_3 tr').each do |node|# -*- coding: utf-8 -*-
   data[c] = []
   node.css('td').each do |td|
-    puts td.text
     data[c].push '"' + td.text + '"'
   end
   if data[c].length != 0

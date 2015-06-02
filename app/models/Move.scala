@@ -15,7 +15,7 @@ case class Move(
   damage: String,
   startup: String,
   hit: String,
-  gurad: String,
+  guard: String,
   counter: String,
   note: String)
 
@@ -25,14 +25,14 @@ object Move extends SkinnyCRUDMapper[Move] {
   override def tableName = "moves"
 
   override def extract(rs:WrappedResultSet, n:ResultName[Move]):Move = new Move(
-    id = rs.int(n.id),
+    id = rs.long(n.id),
     name = rs.string(n.name),
     command = rs.string(n.command),
     detection = rs.string(n.detection),
     damage = rs.string(n.damage),
     startup = rs.string(n.startup),
     hit = rs.string(n.hit),
-    gurad = rs.string(n.gurad),
+    guard = rs.string(n.guard),
     counter = rs.string(n.counter),
     note = rs.string(n.note)
   )
