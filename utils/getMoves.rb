@@ -11,12 +11,21 @@ doc = Nokogiri::HTML.parse(html, nil, 'utf-8')
 
 charactors = []
 
+client = Mysql2::Client.new(:host => 'localhost', :username => 'root', :password => '', :database => 'tekken_combo')
+
+c = 0
+data = []
 doc.css('#content_block_3 tr').each do |node|# -*- coding: utf-8 -*-
-  puts node
-  break
+  data[c] = []
+  node.css('td').each do |td|
+    puts td.text
+    data[c].push '"' + td.text + '"'
+  end
+  if data[c].length != 0
+    query = "insert into moves values(#{c}, #{data[c].join(',')} )"
+    puts query
+    results = client.query(query)
+  end
+  c = c + 1
 end
 
-client = Mysql2::Client.new(:host => 'localhost', :username => 'root', :password => '', :database => 'tekken_combo')
-query = %q{insert into move values("test", "6LK", "", "", "", "", "", "", "")}
-results = client.query(query)
-puts results

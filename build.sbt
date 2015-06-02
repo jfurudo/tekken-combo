@@ -12,10 +12,12 @@ libraryDependencies ++= Seq(
   ws,
   specs2 % Test,
   "org.twitter4j"    % "twitter4j-core"               % "4.0.3",
-  "com.rabbitmq"     % "amqp-client"                  % "3.4.4",
   "org.scalikejdbc" %% "scalikejdbc"                  % "2.2.6",
   "org.scalikejdbc" %% "scalikejdbc-config"           % "2.2.6",
-  "org.scalikejdbc" %% "scalikejdbc-play-initializer" % "2.4.+"
+  "org.scalikejdbc" %% "scalikejdbc-play-initializer" % "2.4.+",
+  "mysql" % "mysql-connector-java" % "5.1.20",
+  "org.skinny-framework" %% "skinny-orm"      % "1.3.18",
+  evolutions
 )
 
 resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
