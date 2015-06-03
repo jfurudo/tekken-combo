@@ -37,4 +37,4 @@ recipe_id bigint not null
 );
 
 # --- !Downs
-drop table recipe_move;
+drop table recipes_moves;
