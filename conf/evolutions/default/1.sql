@@ -2,16 +2,16 @@
 
 # --- !Ups
 CREATE TABLE moves (
-id INT NOT NULL PRIMARY KEY,
-name VARCHAR(255),
-command VARCHAR(255),
-detection VARCHAR(255),
-damage VARCHAR(255),
-startup VARCHAR(255),
-hit VARCHAR(255),
-guard VARCHAR(255),
-counter VARCHAR(255),
-note VARCHAR(255));
+id bigint NOT NULL PRIMARY KEY,
+name varchar(255),
+command varchar(255),
+detection varchar(255),
+damage varchar(255),
+startup varchar(255),
+hit varchar(255),
+guard varchar(255),
+counter varchar(255),
+note varchar(255));
 
 # --- !Downs
 DROP TABLE moves;
@@ -32,9 +32,21 @@ drop table recipes;
 
 # --- !Ups
 create table recipes_moves (
-move_id int not null,
-recipe_id bigint not null
+recipe_id bigint not null,
+move_id int not null
 );
 
 # --- !Downs
 drop table recipes_moves;
+
+# user schema
+
+# --- !Ups
+create table user (
+id bigint auto_increment not null primary key,
+twitter_id bigint not null,
+name varchar(255)
+);
+
+# --- !Downs
+drop table user;

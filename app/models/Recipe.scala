@@ -1,6 +1,5 @@
 package models
 
-import skinny.orm.SkinnyCRUDMapper
 import scalikejdbc._
 import skinny.orm._, feature._
 import org.joda.time._

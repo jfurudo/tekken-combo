@@ -23,4 +23,10 @@ class MoveController extends Controller {
     Ok(Json.stringify(jsValue)).
       withHeaders(CONTENT_TYPE -> "application/json; charset=utf-8")
   }
+
+  def combo = Action {
+    val recipe: Option[Recipe] = Recipe.joins(Recipe.movesRef).findById(2)
+    println(recipe)
+    Ok("hello")
+  }
 }
