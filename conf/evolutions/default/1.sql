@@ -17,6 +17,8 @@ note VARCHAR(255));
 DROP TABLE moves;
 
 
+# recipes schema
+
 # --- !Ups
 create table recipes (
 id bigint auto_increment not null primary key,
@@ -25,6 +27,8 @@ author bigint not null
 
 # --- !Downs
 drop table recipes;
+
+# recipes_moves join table schema
 
 # --- !Ups
 create table recipes_moves (
